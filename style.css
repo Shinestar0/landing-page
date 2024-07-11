@@ -1,0 +1,569 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --grey: #424242;
+    --light-grey: #2C2A2A;
+    --dark-grey: #3C3C3C;
+    --white: #FFFFFF;
+    --dark-white:#EDEDED;
+    --dark-black:#131313;
+    --border:.1rem soild rgba(0,0,0,.1);
+    --box-shadow:0 .5rem 1rem rgba(0,0,0,.1);
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+body{
+    width: 100%;
+
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 7rem;
+    scroll-behavior:smooth;
+}
+
+#header{
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 9%;
+    background: #131313;
+    box-shadow: 0 50px 15px rgba(81, 79, 79, 0.1);
+}
+
+
+
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+#navbar li{
+    list-style: none;
+    padding: 0 20px;
+    margin: 0 10px;
+    position: relative;
+}
+
+#navbar li a{
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #EDEDED;
+    transition: 0.3s ease;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    color:#F9ED32;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after{
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #F9ED32;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#login-btn i{
+    color: #fff;
+}
+
+section{
+    padding: 2rem 9%;
+}
+.btn{
+    display: inline-block;
+    padding: 5px 20px;
+    margin-top: 1rem;
+    border-radius: 0.2rem;
+    background-color: #fff;
+    color: #131313;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #F9ED32;
+}
+
+.login-form-container{
+    position: fixed;
+    top: 105%; left: 0;
+    z-index: 1000;
+    height: 100%;
+    width: 100%;
+    background:rgba(255,255,255,.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+}
+
+.login-form-container.active{
+    top: 0;
+    opacity: 1;
+}
+
+.login-form-container form{
+    padding: 2rem;
+    margin: 2rem;
+    border-radius: .5rem;
+    box-shadow: var(--box-shadow);
+    background: #EDEDED;
+    border: var(--border);
+    text-align: center;
+}
+
+.login-form-container form .buttons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.login-form-container form .btn{
+    display: block;
+    width: 100%;
+    margin: .5rem 0;
+}
+
+.login-form-container form h3{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.login-form-container form .box{
+    margin: 1rem 0;
+    width: 100%;
+    text-transform: none;
+    color:var(--dark-grey);
+    font-size: 1.6rem;
+    padding: 1rem 1.2rem;
+    border: var(--border);
+    border-radius: .5rem;
+}
+
+.login-form-container form p{
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--dark-grey);
+}
+
+.login-form-container form p a{
+    color: #131313;
+    text-decoration: underline;
+}
+
+.login-form-container #close-login-form {
+    position: fixed;
+    top: 1.5rem;
+    right: 2.5rem;
+    font-size: 5rem;
+    color: #131313;
+    cursor: pointer;
+}
+
+.home{
+    padding-top: 10rem;
+    text-align: center;
+    overflow-x: hidden;
+}
+.home h1{
+    padding-top: 100px;
+    font-size: 5.5vw;
+    text-transform: uppercase;
+    color: #424242;
+}
+
+.home p{
+    font-size: 2.5vw ;
+    text-transform: uppercase;
+    color: #131313;
+}
+#changingText{
+    color: #F9ED32;
+}
+.home img{
+    width: 100%;
+    object-fit: cover;
+    margin-top: -200px;
+}
+
+.heading{
+    text-align: center;
+    padding-bottom: 2rem;
+    font-size: 4.5rem;
+    color: #131313;
+}
+.heading span{
+    position: relative;
+    z-index: 0;
+}
+
+.heading span::before{
+    content: '';
+    position: absolute;
+    bottom: 1rem;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #F9ED32;
+    z-index: -1;
+    clip-path: polygon(0 90%, 100% 80%, 100% 100%, 0% 100%);
+}
+.btn-vehicle{
+    display: inline-block;
+    padding-left: 100px;
+    padding: 5px 20px;
+    margin-top: 1rem;
+    border-radius: 0.2rem;
+    background-color: #2C2A2A;
+    color: #EDEDED;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+
+
+.btn-vehicle:hover{
+    background-color: #F9ED32;
+    color:#131313;
+}
+.vehicles .vehicles-slider{
+    padding-bottom: 5rem;
+}
+
+.vehicles .vehicles-slider .box{
+    text-align: center;
+    width: 100rem;
+}
+
+.vehicles .vehicles-slider .box img{
+    width:35%;
+    
+    object-fit: .5;
+    transform: scale(.8); 
+}
+
+.vehicles .vehicles-slider .box .content{
+    /* transform: scale(0); */
+    padding-top: 1rem;
+}
+
+.vehicles .vehicles-slider .box .content h3{
+    font-size: 2.5rem;
+    padding-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+.vehicles .vehicles-slider .box .content h2{
+    font-size: 2.5rem;
+}
+
+/* General styling for the section */
+#usp {
+    padding: 50px;
+    background-color: #EDEDED;
+    text-align: center;
+}
+
+#usp .heading {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#usp .heading span {
+    color: #131313;
+}
+#usp .swiper{
+    width: 100%;
+    height: 100%;
+}
+#usp.swiper-slide{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.usp .box {
+    background: #fff;
+    border: 2px solid #ddd;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+}
+
+.usp .box h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+
+}
+
+.usp .box p {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #131313;
+
+}
+
+.pre{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+.btn-pre {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px 10px;
+    margin-top: 3rem;
+    border-radius: 1rem;
+    background-color: #2C2A2A;
+    color: #EDEDED;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.btn-pre:hover{
+    background-color: #F9ED32;
+    color:#131313;
+}
+
+
+.about{
+    padding-top: 30px;
+    padding: 50px;
+    background-color: #EDEDED;
+    text-align: center;
+}
+.about .heading{
+    text-align: center;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.about p{
+    font-size: 1.5rem;
+    color: #131313;
+}
+
+.note{
+    padding-top: 0px;
+    padding: 0px;
+    padding-bottom: 130px;
+    text-align: center;
+}
+.note .heading{
+    text-align: center;
+    font-size: 3.5rem;
+    padding-top: 50px;
+    font-weight: 500;
+}
+
+.note p{
+    text-align: center;
+    font-size: 1.5rem;
+    color: #131313;
+}
+
+.btn-note{
+    display: inline-block;
+    padding-left: 100px;
+    padding: 5px 20px;
+    margin-top: 1rem;
+    border-radius: 1.2rem;
+    background-color: #2C2A2A;
+    color: #EDEDED;
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.btn-note:hover{
+    background-color: #F9ED32;
+    color:#131313;
+}
+
+.footer .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 1.5rem;
+}
+
+
+.footer{
+    background-color: #131313;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    width: 100%;
+    bottom: 0;
+}
+.footer .box-container .box{
+    text-align: center;
+    color: #fff;
+}
+
+.footer .box-container .box img{
+    width: 100%;
+    object-fit: cover;
+}
+.footer .box-container .box p,
+.footer .box-container .box a,
+.footer .box-container .box li{
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 0.3rem 0;
+}
+.footer .box-container .box li{
+    list-style-type: none;
+}
+
+.footer .box-container .box a i{
+    padding-right: 1rem;
+    padding-left: 4rem;
+}
+.footer .box-container .box h3{
+    color: #EDEDED;
+    font-size: 2.2rem;
+    padding: 1rem 0;
+}
+.footer .box-container .box .content{
+    padding-top: 1rem;
+}
+
+.vehicle1-detail{
+    padding-top: 30px;
+    padding: 50px;
+    padding-bottom: 50px;
+    padding-top: 20rem;
+    display: flex;
+}
+.vehicle1-detail .first-image{
+    width: 50%;
+    margin-right: 50px;
+}
+
+#pagination{
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+#pagination a{
+    background-color: #2C2A2A;
+    padding: 15px 30px;
+    font-size: 15px;
+    border-radius: 4px;
+    color: #EDEDED;
+    font-weight: 600; 
+}
+.vehicle1-detail .vehicle1 p{
+    font-size: 1.5rem;
+    color: #131313;
+    font-weight: 700;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.vehicle1-detail .vehicle1{
+    width: 50%;
+    margin-left: 50px;
+    padding-top: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.vehicle1-detail .vehicle1 h3{
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #333;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.vehicle1-detail .vehicle1 span{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #131313;
+    padding-bottom: 40px;
+}
+
+.vehicle1-detail .vehicle1 td{
+    padding: 10px 0;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EDEDED;
+}
+
+.vehicle1-detail .vehicle1 td li{
+    list-style-type: none;
+}
+
+#compare{
+    padding-top: 30px;
+    padding: 50px;
+    padding-bottom: 50px;
+    padding-top: 20rem;
+    display: flex;
+}
+.compare1{
+    width: 90%;
+    margin-right: 50px;
+    padding-left: 250px;
+}
+#compare td{
+    padding: 10px 0;
+    font-size: 1.4rem;
+    font-weight: 600;
+    padding-top: 10px;
+    padding-right: 20px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    border-bottom: 1px solid #EDEDED;
+}
+#compare th{
+    color: #131313;
+    font-weight: 600;
+    font-size: 2.5rem;
+    padding: 10px 0;
+    padding-left: 50px;
+}
+
+#compare td li{
+    list-style-type: none;
+}
